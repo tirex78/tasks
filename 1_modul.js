@@ -1,10 +1,10 @@
 // в node.js экспортирую функции через exports.functionName
-
-// const factory = require('./handlerFactory');
-// const Category = require('../models/categoryModel');
 // exports.getAllCategory = factory.getAll(Category);
 
 // подключаю через require
+// const factory = require('./handlerFactory');
+// const Category = require('../models/categoryModel');
+
 
 //Пример использования
 // const authController = require('../controllers/authController')
@@ -45,7 +45,7 @@ exports.textTransform = str => str
   .replace(/ + /g, ' ')
   .trim()
 
-//console.log(test)
+//console.log(textTransform(str))
 
 // ** 1.3. Посдчитывающие кол-во слов в строке.
 
@@ -72,8 +72,8 @@ const str2 = 'Текст, в котором слово текст несколь
 
 exports.unique = str => {
   const arr = str.toLowerCase().replace(/,/g, '').split(' ')
-  let counts = {};
-  let result = [];
+  let counts = {}
+  let result = []
 
   for (let i in arr) {
     if (counts[arr[i]]) {
@@ -82,7 +82,6 @@ exports.unique = str => {
       (counts[arr[i]] = 1)
     }
   }
-
   let j = 0;
   for (let i in counts) {
     result[j++] = {
@@ -95,21 +94,3 @@ exports.unique = str => {
 
 
 //console.log(unique(str2))
-
-
-// ** 2.Написать модуль, который способен выполнять операции с числами любой длины.
-// 4 метода для сложения, умножения, вычитания и деления.
-
-exports.calculator = {
-  '+': function (a, b) { return a + b },
-  '-': function (a, b) { return a - b },
-  '*': function (a, b) { return a * b },
-  '/': function (a, b) { return a / b },
-  'calc': function (a, b, op) { return this[op](a, b) }
-}
-
-// console.log(calculator.calc(5, 6, '+'))
-// console.log(calculator.calc(5, 6, '-'))
-// console.log(calculator.calc(5, 6, '*'))
-// console.log(calculator.calc(5, 6, '/'))
-
