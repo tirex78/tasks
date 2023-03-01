@@ -27,7 +27,7 @@ exports.multiplication = (a, b) => {
   if ((a > minBigInt && a < maxBigInt) && (b > minBigInt && b < maxBigInt)) {
     return +a * (+b)
   } else {
-    return (BigInt(a) - BigInt(b)).toString()
+    return (BigInt(a) * BigInt(b)).toString()
   }
 }
 
@@ -35,7 +35,7 @@ exports.division = (a, b) => {
   if ((a > minBigInt && a < maxBigInt) && (b > minBigInt && b < maxBigInt)) {
     return +a / (+b)
   } else {
-    return (BigInt(a) - BigInt(b)).toString()
+    return (BigInt(a) / BigInt(b)).toString()
   }
 }
 
